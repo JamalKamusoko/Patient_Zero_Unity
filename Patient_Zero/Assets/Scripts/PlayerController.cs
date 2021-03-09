@@ -41,35 +41,5 @@ public class PlayerController : MonoBehaviour
          }
 
         transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, rotSpeed * Time.deltaTime);
-
-        //By default chest is set to false 
-        if (ChestMenu == false)
-        {
-            PopUpMenu.SetActive(false);
-            Time.timeScale = 1.0f;
-        }
-        //When player collects a chest stop time and activate pop up menu
-        if (ChestMenu == true)
-        {
-            PopUpMenu.SetActive(true);
-            Time.timeScale = 0.0f;
-            
-        }
-
-
-    }
-
-    //PickUp Score
-    public void OnPickUpSelect()
-    {
-        Score += (int)Random.Range(-100.0f, 100.0f);
-    }
-
-    //When either Pick Up or Drop gets clicked the Chest Menu gets reset 
-    public void ChestTrigger()
-    {
-        ChestMenu = false;
     }
 }
-
-
